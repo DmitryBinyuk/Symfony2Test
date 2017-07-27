@@ -10,6 +10,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Patient;
+use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 
 class PatientController extends Controller
 {
@@ -41,14 +42,13 @@ class PatientController extends Controller
         $patients = $query->getResult();
 
         $result = [];
-//        $serializer = $this->get('serializer');
 
         $result['collections']['patient'] = array();
 
-        $normalizers = new \Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer();
+        $normalizer = new GetSetMethodNormalizer();
 
         foreach ($patients as $key=>$patient){
-            $normalizedPatient = $normalizers->normalize($patient);
+            $normalizedPatient = $normalizer->normalize($patient);
             array_push($result['collections']['patient'], $normalizedPatient);
         }
 
@@ -57,7 +57,7 @@ class PatientController extends Controller
         $result['navigation'] = [];
 
         foreach ($navigations as $navigation){
-            $normalizedNavigation = $normalizers->normalize($navigation);
+            $normalizedNavigation = $normalizer->normalize($navigation);
             array_push($result['navigation'], $normalizedNavigation);
         }
 
@@ -74,7 +74,6 @@ class PatientController extends Controller
 	return $response;
 	
 	
-	
 //	$response = new JsonResponse();
 //	$response->setData(array(
 //	    'data' => $result
@@ -89,18 +88,32 @@ class PatientController extends Controller
      */
     public function groupsAction()
     {
-	$repository = $this->getDoctrine()->getRepository(Patient::class);
+        $repository = $this->getDoctrine()->getRepository(Patient::class);
+
+        $query = $repository->createQueryBuilder('p')
+                    ->select('p.patientGroup')
+                    ->distinct();
+
+        $query = $query->getQuery();
+        $groups = $query->getResult();
 	
-	$query = $repository->createQueryBuilder('p')
-			    ->select('p.patientGroup')
-			    ->distinct();
-		
-		
-	$query = $query->getQuery();
-	
-	$groups = $query->getResult();
-	var_dump($groups);
-	die;
+//	var_dump(array_values($groups1));
+//        die;
+//
+//        $normalizer = new GetSetMethodNormalizer();
+//        $groups = $normalizer->normalize($groups1);
+//
+//        var_dump($groups);
+//        die;
+
+        $response = new Response();
+        $response->setContent(json_encode(array(
+            'data' => $groups,
+        )));
+
+        $response->headers->set('Content-Type', 'application/json');
+
+        return $response;
 		
     }
 }

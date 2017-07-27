@@ -18,9 +18,9 @@ class PatientController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $group = 'Ittri, Mulham';// $request->query->get('group');
+        $group = $request->query->get('group');
         $name = $request->query->get('name');
-        $status = 0;//$request->query->get('status');
+        $status = $request->query->get('status');
 
         $repository = $this->getDoctrine()->getRepository(Patient::class);
 
@@ -31,52 +31,56 @@ class PatientController extends Controller
             $query->where('p.patientGroup = :group');
             $query->setParameter('group', $group);
         }
-    //	die(1);
+
         if(!is_null($status)){
             $query->andWhere('p.status = :status');
             $query->setParameter('status', $status);
         }
 
         $query = $query->getQuery();
-
         $patients = $query->getResult();
-    //	var_dump($patients);
-    //	die;
-
 
         $result = [];
-        $serializer = $this->get('serializer');
+//        $serializer = $this->get('serializer');
+
+        $result['collections']['patient'] = array();
+
+        $normalizers = new \Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer();
+
         foreach ($patients as $key=>$patient){
-            $result['collections']['patient'][] = $serializer->serialize($patient, 'json');
+            $normalizedPatient = $normalizers->normalize($patient);
+            array_push($result['collections']['patient'], $normalizedPatient);
         }
 
         $repositoryNavigation = $this->getDoctrine()->getRepository(Navigation::class);
         $navigations = $repositoryNavigation->findAll();
+        $result['navigation'] = [];
 
         foreach ($navigations as $navigation){
-            $result['navigation'][] = $serializer->serialize($navigation, 'json');
+            $normalizedNavigation = $normalizers->normalize($navigation);
+            array_push($result['navigation'], $normalizedNavigation);
         }
 
 //        var_dump($result['navigation']);
-    //	var_dump($result['collections']['patient']);
+////    	var_dump($result['collections']['patient']);
 //	die;
-	
+
 	$response = new Response();
 	$response->setContent(json_encode(array(
 	    'data' => $result,
 	)));
 	$response->headers->set('Content-Type', 'application/json');
-	
-	return $response;
-	
-	
-	
-	$response = new JsonResponse();
-	$response->setData(array(
-	    'data' => $result
-	));
 
 	return $response;
+	
+	
+	
+//	$response = new JsonResponse();
+//	$response->setData(array(
+//	    'data' => $result
+//	));
+//
+//	return $response;
 
     }
     

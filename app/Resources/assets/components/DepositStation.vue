@@ -9,10 +9,10 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <ul class="nav nav-pills nav-stacked">
-                        <li><a href="#" @click="currentPane = 'alphabet'"><span class="glyphicon glyphicon-sort-by-alphabet" aria-hidden="true"></span></a></li>
-                        <li><a href="#" @click="currentPane = 'groups'"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a></li>
-                        <li><a href="#" @click="currentPane = 'archive'"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></li>
-                        <li><a href="#" @click="currentPane = 'search'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
+                        <li :class="{ 'active' : currentPane == 'alphabet'}"><a href="#" @click="currentPane = 'alphabet'"><span class="glyphicon glyphicon-sort-by-alphabet" aria-hidden="true"></span></a></li>
+                        <li :class="{ 'active' : currentPane == 'groups'}"><a href="#" @click="currentPane = 'groups'"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a></li>
+                        <li :class="{ 'active' : currentPane == 'archive'}"><a href="#" @click="currentPane = 'archive'"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></li>
+                        <li :class="{ 'active' : currentPane == 'search'}"><a href="#" @click="currentPane = 'search'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
                     </ul>
                 </div>
             </div>

@@ -1,5 +1,5 @@
 <template>
-    <div class="col-sm-3 col-sm-offset-7">
+    <div class="col-sm-4 col-sm-offset-6">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4>Archive</h4>

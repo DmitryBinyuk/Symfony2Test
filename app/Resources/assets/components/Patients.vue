@@ -3,10 +3,11 @@
         <a href="#" class="list-group-item" v-for="patient in patients" @click="showPatient(patient.id)">
             {{ patient.label }}<span class="caret"></span>
             <div v-show="openedPatient == patient.id">
-                <p><strong>Tel.:</strong> {{ patient.details.tel }}</p>
-                <p><strong>E-mail:</strong> {{ patient.details.email }}</p>
+                <p><strong>Tel.:</strong> {{ patient.tel }}</p>
+                <p><strong>E-mail:</strong> {{ patient.email }}</p>
             </div>
         </a>
+        <div v-show="patients == ''"><img src="loader.svg"></div>
         <a href="#" class="list-group-item more">
             <strong>More</strong>
         </a>

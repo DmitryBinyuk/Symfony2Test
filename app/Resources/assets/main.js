@@ -16,53 +16,54 @@ const store = new Vuex.Store({
     patientsByGroup: [],
     patientsBySearch: [],
     patientsByArchive: [],
-    groups: [
-      'Mende',
-      'Manuela',
-      'Ittri'
-    ]
+    groups: []
   },
 
   mutations: {
-    getPatientsByGroup (state, group) {
-      console.log('Тут будет запрос на загрузку пациентов с фильтрацией по группе ' + group)
-      state.patientsByGroup = [
-        {id: 1, label: 'Vier Testfall', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}},
-        {id: 2, label: 'Beata Brysz', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}
-      ]
-    },
-    getPatientsBySearch (state, query) {
-      console.log('Поиск по: ' + query)
-      state.patientsBySearch = [
-        {id: 1, label: 'Vier Testfall', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}
-      ]
-    },
-    getPatientsByArchive (state) {
-      console.log('Архивные пациенты')
-      state.patientsByArchive = [
-        {id: 5, label: 'Frank Weigel', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}},
-        {id: 6, label: 'Marie Meier', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}},
-        {id: 7, label: 'Heike Otto', group: 'Ittri, Mulham', status: 0, details: {email: 'test@test.de', tel: '1234'}}
-      ]
-    },
-    getPatientsByAlphabet (state) {
-      axios.post('/patients')
+    getGroups (state) {
+      axios.get('/groups')
         .then(function (response) {
-          console.log(response)
+          state.groups = response.data.data
         })
         .catch(function (response) {
           console.log(response)
         })
-
-      state.patientsByAlphabet = [
-        {id: 1, label: 'Vier Testfall', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}},
-        {id: 2, label: 'Beata Brysz', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}},
-        {id: 3, label: 'Claus Nolte', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}},
-        {id: 4, label: 'Andrea Kuckuck', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}},
-        {id: 5, label: 'Frank Weigel', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}},
-        {id: 6, label: 'Marie Meier', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}},
-        {id: 7, label: 'Heike Otto', group: 'Ittri, Mulham', status: 0, details: {email: 'test@test.de', tel: '1234'}}
-      ]
+    },
+    getPatientsByGroup (state, group) {
+      axios.get('/patients?group=' + group)
+        .then(function (response) {
+          state.patientsByGroup = response.data.data.collections.patient
+        })
+        .catch(function (response) {
+          console.log(response)
+        })
+    },
+    getPatientsBySearch (state, query) {
+      axios.get((query) ? '/patients?name=' + query : '/patients')
+        .then(function (response) {
+          state.patientsBySearch = response.data.data.collections.patient
+        })
+        .catch(function (response) {
+          console.log(response)
+        })
+    },
+    getPatientsByArchive (state) {
+      axios.get('/patients?status=0')
+        .then(function (response) {
+          state.patientsByArchive = response.data.data.collections.patient
+        })
+        .catch(function (response) {
+          console.log(response)
+        })
+    },
+    getPatientsByAlphabet (state) {
+      axios.get('/patients')
+        .then(function (response) {
+          state.patientsByAlphabet = response.data.data.collections.patient
+        })
+        .catch(function (response) {
+          console.log(response)
+        })
     }
   }
 })

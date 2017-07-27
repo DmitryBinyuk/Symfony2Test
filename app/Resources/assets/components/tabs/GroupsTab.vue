@@ -1,13 +1,15 @@
 <template>
-    <div class="col-md-3 col-md-offset-7">
+    <div class="col-sm-3 col-sm-offset-7">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4>Groups</h4>
             </div>
 
+            <div v-show="groups == ''"><img src="loader.svg"></div>
+
             <div class="panel-body" v-show="showGroupsBlock">
                 <div class="list-group">
-                    <a href="#" class="list-group-item" @click="showPatients(group)" v-for="group in groups">{{ group }}</a>
+                    <a href="#" class="list-group-item" @click="showPatients(group.patientGroup)" v-for="group in groups">{{ group.patientGroup }}</a>
                 </div>
             </div>
 
@@ -53,6 +55,10 @@
         this.showPatientsBlock = false
         this.showGroupsBlock = true
       }
+    },
+
+    mounted: function () {
+      this.$store.commit('getGroups')
     }
   }
 </script>

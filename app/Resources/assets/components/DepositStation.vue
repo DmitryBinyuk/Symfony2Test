@@ -5,7 +5,7 @@
         <archive-tab v-show="currentPane == 'archive'"></archive-tab>
         <search-tab v-show="currentPane == 'search'"></search-tab>
 
-        <div class="col-md-2">
+        <div class="col-sm-2">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <ul class="nav nav-pills nav-stacked">

@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Vuex from 'vuex'
+import axios from 'axios'
 
 Vue.config.productionTip = false
 
@@ -45,7 +46,14 @@ const store = new Vuex.Store({
       ]
     },
     getPatientsByAlphabet (state) {
-      console.log('Пациенты по алфавиту')
+      axios.post('/patients')
+        .then(function (response) {
+          console.log(response)
+        })
+        .catch(function (response) {
+          console.log(response)
+        })
+
       state.patientsByAlphabet = [
         {id: 1, label: 'Vier Testfall', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}},
         {id: 2, label: 'Beata Brysz', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}},

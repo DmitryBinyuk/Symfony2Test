@@ -9,7 +9,7 @@
 
             <div class="panel-body" v-show="showGroupsBlock">
                 <div class="list-group">
-                    <a href="#" class="list-group-item" @click="showPatients(group.patientGroup)" v-for="group in groups">{{ group.patientGroup }}</a>
+                    <a class="list-group-item" @click="showPatients(group.patientGroup)" v-for="group in groups">{{ group.patientGroup }}</a>
                 </div>
             </div>
 

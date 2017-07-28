@@ -1,6 +1,6 @@
 <template>
     <div class="list-group patients">
-        <a href="#" class="list-group-item" v-for="patient in patients" @click="showPatient(patient.id)">
+        <a class="list-group-item" v-for="patient in patients" @click="showPatient(patient.id)">
             {{ patient.label }}<span class="caret"></span>
             <div v-show="openedPatient == patient.id">
                 <p><strong>Tel.:</strong> {{ patient.tel }}</p>
@@ -8,7 +8,7 @@
             </div>
         </a>
         <div v-show="patients == ''"><img src="loader.svg"></div>
-        <a href="#" class="list-group-item more">
+        <a class="list-group-item more">
             <strong>More</strong>
         </a>
     </div>
@@ -24,7 +24,7 @@
 
     data () {
       return {
-        openedPatient: 1
+        openedPatient: 0
       }
     },
 

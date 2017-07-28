@@ -55,7 +55,7 @@ class PatientController extends Controller
         }
 
         if(!is_null($name)){
-            $query->andWhere('p.label = :label');
+            $query->andWhere("LOWER(p.label) LIKE LOWER(:label)");
             $query->setParameter('label', $name);
         }
 

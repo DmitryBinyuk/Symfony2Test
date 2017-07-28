@@ -9,10 +9,10 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <ul class="nav nav-pills nav-stacked">
-                        <li :class="{ 'active' : currentPane == 'alphabet'}"><a @click="currentPane = 'alphabet'"><span class="glyphicon glyphicon-sort-by-alphabet" aria-hidden="true"></span></a></li>
-                        <li :class="{ 'active' : currentPane == 'groups'}"><a @click="currentPane = 'groups'"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a></li>
-                        <li :class="{ 'active' : currentPane == 'archive'}"><a @click="currentPane = 'archive'"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></li>
-                        <li :class="{ 'active' : currentPane == 'search'}"><a @click="currentPane = 'search'"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
+                        <li :class="{ 'active' : currentPane == 'alphabet'}"><a @click="openTab('alphabet')"><span class="glyphicon glyphicon-sort-by-alphabet" aria-hidden="true"></span></a></li>
+                        <li :class="{ 'active' : currentPane == 'groups'}"><a @click="openTab('groups')"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a></li>
+                        <li :class="{ 'active' : currentPane == 'archive'}"><a @click="openTab('archive')"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></li>
+                        <li :class="{ 'active' : currentPane == 'search'}"><a @click="openTab('search')"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
                     </ul>
                 </div>
             </div>
@@ -39,6 +39,17 @@
     data () {
       return {
         currentPane: 'alphabet'
+      }
+    },
+
+    mounted () {
+      this.currentPane = localStorage.getItem('currentTab') || 'alphabet'
+    },
+
+    methods: {
+      openTab (tabName) {
+        this.currentPane = tabName
+        localStorage.setItem('currentTab', tabName)
       }
     }
   }

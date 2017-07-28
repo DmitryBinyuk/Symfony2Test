@@ -16,7 +16,8 @@ const store = new Vuex.Store({
     patientsByGroup: [],
     patientsBySearch: [],
     patientsByArchive: [],
-    groups: []
+    groups: [],
+    nothingNotFound: false
   },
 
   mutations: {
@@ -33,6 +34,7 @@ const store = new Vuex.Store({
       axios.get('/patients?group=' + group)
         .then(function (response) {
           state.patientsByGroup = response.data.data.collections.patient
+          state.nothingNotFound = response.data.data.collections.patient.length === 0
         })
         .catch(function (response) {
           console.log(response)
@@ -42,6 +44,7 @@ const store = new Vuex.Store({
       axios.get((query) ? '/patients?name=' + query : '/patients')
         .then(function (response) {
           state.patientsBySearch = response.data.data.collections.patient
+          state.nothingNotFound = response.data.data.collections.patient.length === 0
         })
         .catch(function (response) {
           console.log(response)
@@ -51,6 +54,7 @@ const store = new Vuex.Store({
       axios.get('/patients?status=0')
         .then(function (response) {
           state.patientsByArchive = response.data.data.collections.patient
+          state.nothingNotFound = response.data.data.collections.patient.length === 0
         })
         .catch(function (response) {
           console.log(response)
@@ -60,6 +64,7 @@ const store = new Vuex.Store({
       axios.get('/patients')
         .then(function (response) {
           state.patientsByAlphabet = response.data.data.collections.patient
+          state.nothingNotFound = response.data.data.collections.patient.length === 0
         })
         .catch(function (response) {
           console.log(response)

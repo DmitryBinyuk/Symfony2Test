@@ -7,20 +7,34 @@
                 <p><strong>E-mail:</strong> {{ patient.email }}</p>
             </div>
         </a>
-        <div v-show="patients == ''"><img src="loader.svg"></div>
-        <a class="list-group-item more">
+        <div v-show="patients == '' && !nothingNotFound "><img src="loader.svg"></div>
+
+        <p v-show="nothingNotFound">Nothing not found</p>
+
+        <a v-show="!nothingNotFound" class="list-group-item more">
             <strong>More</strong>
         </a>
     </div>
 </template>
 
 <script>
+  import { mapState } from 'vuex'
+
   export default {
     name: 'patients',
 
     props: [
       'patients'
     ],
+
+    computed: {
+      localComputed () {
+        //
+      },
+      ...mapState([
+        'nothingNotFound'
+      ])
+    },
 
     data () {
       return {

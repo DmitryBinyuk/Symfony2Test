@@ -50,15 +50,21 @@
         this.$store.commit('getPatientsByGroup', group)
         this.showPatientsBlock = true
         this.showGroupsBlock = false
+        localStorage.setItem('currentGroup', group)
       },
       showGroups () {
         this.showPatientsBlock = false
         this.showGroupsBlock = true
+        localStorage.removeItem('currentGroup')
       }
     },
 
     mounted: function () {
       this.$store.commit('getGroups')
+      var currentGroup = localStorage.getItem('currentGroup')
+      if (currentGroup) {
+        this.showPatients(currentGroup)
+      }
     }
   }
 </script>

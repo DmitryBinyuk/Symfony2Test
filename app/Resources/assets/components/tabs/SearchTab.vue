@@ -42,7 +42,8 @@
       },
       ...mapState([
         'groups',
-        'patientsBySearch'
+        'patientsBySearch',
+        'nothingNotFound'
       ])
     },
 

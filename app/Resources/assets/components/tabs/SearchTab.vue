@@ -7,7 +7,7 @@
 
             <div class="panel-body">
                 <div :class="{ 'input-group': searchQuery }">
-                    <input type="text" class="form-control" id="search" placeholder="Search" v-model="searchQuery" @keyup="searchPatients(searchQuery)" @keyup.esc="clearSearch()">
+                    <input type="text" class="form-control" id="search" placeholder="Search" v-model="searchQuery" @keyup="searchPatients(searchQuery)">
                     <span class="input-group-btn">
                         <button class="btn btn-default" v-show="searchQuery" type="button" @click="clearSearch()"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
                     </span>
@@ -32,7 +32,7 @@
 
     data () {
       return {
-        searchQuery: ''
+        searchQuery: null
       }
     },
 
@@ -53,7 +53,7 @@
       },
 
       clearSearch () {
-        this.searchQuery = ''
+        this.searchQuery = null
         this.searchPatients(null)
       }
     },

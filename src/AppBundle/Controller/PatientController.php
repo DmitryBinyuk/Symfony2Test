@@ -20,9 +20,11 @@ class PatientController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $limit = 5;
         $group = $request->query->get('group');
         $name = $request->query->get('name');
         $status = $request->query->get('status');
+        $page = $request->query->get('page');
 
         $normalizer = new GetSetMethodNormalizer();
 
@@ -56,7 +58,15 @@ class PatientController extends Controller
 
         if(!is_null($name)){
             $query->andWhere("LOWER(p.label) LIKE LOWER(:label)");
-            $query->setParameter('label', $name);
+            $query->setParameter('label', '%'.$name.'%');
+        }
+
+        if(!is_null($page)){
+
+            $offset = ($page*$limit)-$limit;
+
+            $query->setMaxResults($limit)
+                ->setFirstResult($offset);
         }
 
         $query = $query->getQuery();

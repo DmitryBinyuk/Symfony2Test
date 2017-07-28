@@ -61,7 +61,7 @@ const store = new Vuex.Store({
         })
     },
     getPatientsByAlphabet (state) {
-      axios.get('/patients')
+      axios.get('/patients?page=1')
         .then(function (response) {
           state.patientsByAlphabet = response.data.data.collections.patient
           state.nothingNotFound = response.data.data.collections.patient.length === 0
@@ -69,6 +69,9 @@ const store = new Vuex.Store({
         .catch(function (response) {
           console.log(response)
         })
+    },
+    resetNotFound (state) {
+      state.nothingNotFound = false
     }
   }
 })

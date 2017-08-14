@@ -53,7 +53,7 @@ class DepositStationController extends Controller
 	
 	$responseArray['navigation'] = json_decode(json_encode($obj->navigation), true);
 	
-	for($i=1; $i<=20; $i++){
+	for($i=1; $i<=20000; $i++){
 	    
 	    $compinedValue = ['id' => $i,
 			      'label' => $labels[rand(0, count($labels)-1)],

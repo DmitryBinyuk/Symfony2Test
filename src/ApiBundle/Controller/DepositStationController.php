@@ -23,35 +23,35 @@ class DepositStationController extends Controller
         $jsonService = $this->get('parse.json.service');
         $json = $jsonService->getJson();
 	
-	$obj = json_decode($json);
+	$jsonObject = json_decode($json);
 	
 	$labels = [];
 	$groups = [];
 	$statuses = [];
 	$details = [];
 	
-	foreach($obj->collections->patient as $key=>$val){
-	    if(!in_array($val->label, $labels)){
-		$labels[] = $val->label;
+	foreach($jsonObject->collections->patient as $key=>$value){
+	    if(!in_array($value->label, $labels)){
+		$labels[] = $value->label;
 	    }
 	    
-	    if(!in_array($val->group, $groups)){
-		$groups[] = $val->group;
+	    if(!in_array($value->group, $groups)){
+		$groups[] = $value->group;
 	    }
 	    
-	    if(!in_array($val->status, $statuses)){
-		$statuses[] = $val->status;
+	    if(!in_array($value->status, $statuses)){
+		$statuses[] = $value->status;
 	    }
 	    
-	    if(!in_array($val->details, $details)){
-		$details['email'] = $val->details->email;
-		$details['tel'] = $val->details->tel;
+	    if(!in_array($value->details, $details)){
+		$details['email'] = $value->details->email;
+		$details['tel'] = $value->details->tel;
 	    }
 	}
 	
 	$responseArray = [];
 	
-	$responseArray['navigation'] = json_decode(json_encode($obj->navigation), true);
+	$responseArray['navigation'] = json_decode(json_encode($jsonObject->navigation), true);
 	
 	for($i=1; $i<=20000; $i++){
 	    

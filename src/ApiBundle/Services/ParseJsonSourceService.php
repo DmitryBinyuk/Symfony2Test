@@ -3,6 +3,8 @@
 namespace ApiBundle\Services;
 
 use Symfony\Component\Translation\Loader\JsonFileLoader;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class ParseJsonSourceService extends JsonFileLoader
 {
@@ -17,10 +19,10 @@ class ParseJsonSourceService extends JsonFileLoader
             $file = file_get_contents(__DIR__.'/data.json', 'uk');
             $content = json_decode($file);
         } catch (\Exception $e) {
-	    throw new HttpException(500, "File parsing exeption!");
+	        throw new HttpException(500, "File parsing exeption!");
         }
 
-	return $content;
+	    return $content;
     }
 }
 

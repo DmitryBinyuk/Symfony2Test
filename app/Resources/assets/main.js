@@ -63,7 +63,8 @@ const store = new Vuex.Store({
       }
     ],
     filteredPatients: [],
-    currentGroup: null
+    currentGroup: null,
+    searchQuery: null
   },
 
   mutations: {
@@ -82,12 +83,25 @@ const store = new Vuex.Store({
       if (state.currentList.group) {
         state.filteredPatients = state.filteredPatients.filter(patient => patient.group === state.currentGroup)
       }
+      // Search by searchQuery
+      if (state.currentList.filterBox) {
+        for (let box in state.currentList.filterBox) {
+          state.filteredPatients = state.filteredPatients.filter(patient => {
+            let value = _.lowerCase(patient[state.currentList.filterBox[box].value])
+            let query = _.lowerCase(state.searchQuery)
+            return value.indexOf(query) + 1
+          })
+        }
+      }
     },
     freshPatients (state) {
       state.filteredPatients = state.patients
     },
     setGroups (state, groups) {
       state.groups = groups
+    },
+    setSearchQuery (state, searchQuery) {
+      state.searchQuery = searchQuery
     }
   },
 
@@ -105,6 +119,11 @@ const store = new Vuex.Store({
     loadGroups ({commit, state}) {
       let groups = _.mapValues(_.uniqBy(state.patients, 'group'), 'group')
       commit('setGroups', groups)
+    },
+    searchPatients (context, searchQuery) {
+      context.commit('setSearchQuery', searchQuery)
+      context.commit('freshPatients')
+      context.commit('filterPatients')
     }
   }
 })

@@ -93,6 +93,10 @@
       clearSearch () {
         this.searchQuery = null
         this.searchPatients(null)
+      },
+
+      searchPatients (searchQuery) {
+        this.$store.dispatch('searchPatients', searchQuery)
       }
     },
 

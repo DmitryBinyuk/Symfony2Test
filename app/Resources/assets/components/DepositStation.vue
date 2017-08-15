@@ -33,8 +33,7 @@
     },
 
     mounted () {
-      this.$store.dispatch('loadGroups')
-      this.$store.commit('freshPatients')
+      this.$store.dispatch('loadPatients')
     }
   }
 </script>

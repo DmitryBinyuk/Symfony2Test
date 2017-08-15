@@ -10,7 +10,7 @@ class ParseJsonSourceService extends JsonFileLoader
     {
         $Loader = new JsonFileLoader();
 
-	$file = $Loader->loadResource(__DIR__.'/data.json');
+	$file = $Loader->load(__DIR__.'/data.json');
 	
 	return json_encode($file);
     }

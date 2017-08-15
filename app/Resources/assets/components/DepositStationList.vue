@@ -88,6 +88,7 @@
       showGroups () {
         this.showPatientsBlock = false
         this.showGroupsBlock = true
+        this.$store.commit('resetCurrentGroup')
       },
 
       clearSearch () {

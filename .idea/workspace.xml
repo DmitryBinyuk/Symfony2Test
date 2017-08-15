@@ -2,12 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9ac6a3fa-0958-49f5-95a6-9cc1de617971" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml___jb_tmp___" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/.gitkeep" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/static/fonts/glyphicons-halflings-regular.448c34a.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/static/fonts/glyphicons-halflings-regular.e18bbf6.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/static/fonts/glyphicons-halflings-regular.f4769f9.eot" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/static/fonts/glyphicons-halflings-regular.fa27723.woff" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.babelrc" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.editorconfig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.eslintignore" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.eslintrc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.postcssrc.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/assets/App.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/assets/components/DepositStation.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/assets/components/DepositStationItem.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/assets/components/DepositStationList.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/assets/components/DepositStationNavigation.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/assets/components/Patients.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/assets/components/tabs/AlphabetTab.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/assets/components/tabs/ArchiveTab.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/assets/components/tabs/GroupsTab.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/assets/components/tabs/SearchTab.vue" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/assets/main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/assets/router/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/dev.env.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/index.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/prod.env.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/loader.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/static/css/main.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/static/css/main.css.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/static/img/glyphicons-halflings-regular.8988968.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/static/js/app.main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/static/js/app.main.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/static/js/manifest.main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/static/js/manifest.main.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/static/js/vendor.main.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/static/js/vendor.main.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/yarn.lock" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/test.iml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApiBundle/Controller/DepositStationController.php" afterPath="$PROJECT_DIR$/src/ApiBundle/Controller/DepositStationController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ApiBundle/Services/ParseJsonSourceService.php" afterPath="$PROJECT_DIR$/src/ApiBundle/Services/ParseJsonSourceService.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/config.php" afterPath="$PROJECT_DIR$/web/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/PatientController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PatientController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/LoadPatientData.php" afterPath="$PROJECT_DIR$/src/AppBundle/DataFixtures/ORM/LoadPatientData.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -22,11 +63,11 @@
       <file leaf-file-name="PatientController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PatientController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1200">
-              <caret line="67" column="55" lean-forward="false" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="55" />
+            <state relative-caret-position="1540">
+              <caret line="77" column="55" lean-forward="false" selection-start-line="77" selection-start-column="55" selection-end-line="77" selection-end-column="55" />
               <folding>
                 <element signature="e#40#72#0#PHP" expanded="true" />
-                <marker date="1502730223921" expanded="true" signature="1461:1605" ph="//..." />
+                <marker date="1502789176033" expanded="true" signature="623:639" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -35,8 +76,8 @@
       <file leaf-file-name="DepositStationController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ApiBundle/Controller/DepositStationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="780">
-              <caret line="46" column="42" lean-forward="false" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
+            <state relative-caret-position="760">
+              <caret line="45" column="42" lean-forward="false" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -55,7 +96,7 @@
       <file leaf-file-name="JsonFileLoader.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Translation/Loader/JsonFileLoader.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-187">
+            <state relative-caret-position="1000">
               <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
               <folding>
                 <element signature="e#7#236#0#PHP" expanded="true" />
@@ -68,7 +109,7 @@
       <file leaf-file-name="MessageCatalogue.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Translation/MessageCatalogue.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3740">
+            <state relative-caret-position="4280">
               <caret line="221" column="31" lean-forward="false" selection-start-line="221" selection-start-column="20" selection-end-line="221" selection-end-column="31" />
               <folding />
             </state>
@@ -148,8 +189,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -394,28 +433,16 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../DITASO" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -520,27 +547,27 @@
       <workItem from="1502184884152" duration="3489000" />
       <workItem from="1502392498151" duration="660000" />
       <workItem from="1502740268376" duration="607000" />
-      <workItem from="1502787219541" duration="1766000" />
+      <workItem from="1502787219541" duration="2035000" />
+      <workItem from="1502789257754" duration="3000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26038000" />
+    <option name="totallyTimeSpent" value="26310000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="68" y="-11" width="1853" height="1092" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21551247" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21772853" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34837356" sideWeight="0.5018909" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3268817" sideWeight="0.49810913" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3268817" sideWeight="0.49810913" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903227" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -563,22 +590,22 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/AppBundle/Controller/PatientController.php</url>
-          <line>70</line>
+          <line>80</line>
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/AppBundle/Controller/PatientController.php</url>
-          <line>68</line>
+          <line>78</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/AppBundle/Controller/PatientController.php</url>
-          <line>89</line>
+          <line>100</line>
           <option name="timeStamp" value="10" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
           <url>file://$PROJECT_DIR$/src/ApiBundle/Controller/DepositStationController.php</url>
-          <line>49</line>
+          <line>48</line>
           <option name="timeStamp" value="11" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="php">
@@ -599,11 +626,65 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PatientController.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1540">
+          <caret line="77" column="55" lean-forward="false" selection-start-line="77" selection-start-column="55" selection-end-line="77" selection-end-column="55" />
+          <folding>
+            <element signature="e#40#72#0#PHP" expanded="true" />
+            <marker date="1502789176033" expanded="true" signature="623:639" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ApiBundle/Controller/DepositStationController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="45" column="42" lean-forward="false" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Translation/Loader/JsonFileLoader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1000">
+          <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+          <folding>
+            <element signature="e#7#236#0#PHP" expanded="true" />
+            <element signature="e#287#356#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Translation/MessageCatalogue.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4280">
+          <caret line="221" column="31" lean-forward="false" selection-start-line="221" selection-start-column="20" selection-end-line="221" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ApiBundle/Services/data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="620">
+          <caret line="31" column="5" lean-forward="false" selection-start-line="31" selection-start-column="5" selection-end-line="31" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ApiBundle/Services/ParseJsonSourceService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" column="8" lean-forward="false" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PatientController.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1200">
           <caret line="67" column="55" lean-forward="false" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="55" />
           <folding>
             <element signature="e#40#72#0#PHP" expanded="true" />
-            <marker date="1502730223921" expanded="true" signature="1461:1605" ph="//..." />
+            <marker date="1502789176033" expanded="true" signature="623:639" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -643,7 +724,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#40#72#0#PHP" expanded="true" />
-            <marker date="1502730223921" expanded="true" signature="1461:1605" ph="//..." />
+            <marker date="1502789176033" expanded="true" signature="623:639" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -675,7 +756,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#40#72#0#PHP" expanded="true" />
-            <marker date="1502730223921" expanded="true" signature="1461:1605" ph="//..." />
+            <marker date="1502789176033" expanded="true" signature="623:639" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -694,7 +775,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#40#72#0#PHP" expanded="true" />
-            <marker date="1502730223921" expanded="true" signature="1461:1605" ph="//..." />
+            <marker date="1502789176033" expanded="true" signature="623:639" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -728,7 +809,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#40#72#0#PHP" expanded="true" />
-            <marker date="1502730223921" expanded="true" signature="1461:1605" ph="//..." />
+            <marker date="1502789176033" expanded="true" signature="623:639" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -746,7 +827,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#40#72#0#PHP" expanded="true" />
-            <marker date="1502730223921" expanded="true" signature="1461:1605" ph="//..." />
+            <marker date="1502789176033" expanded="true" signature="623:639" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -764,7 +845,7 @@
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="e#40#72#0#PHP" expanded="true" />
-            <marker date="1502730223921" expanded="true" signature="1461:1605" ph="//..." />
+            <marker date="1502789176033" expanded="true" signature="623:639" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -828,11 +909,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PatientController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1200">
-          <caret line="67" column="55" lean-forward="false" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="55" />
+        <state relative-caret-position="1540">
+          <caret line="77" column="55" lean-forward="false" selection-start-line="77" selection-start-column="55" selection-end-line="77" selection-end-column="55" />
           <folding>
             <element signature="e#40#72#0#PHP" expanded="true" />
-            <marker date="1502730223921" expanded="true" signature="1461:1605" ph="//..." />
+            <marker date="1502789176033" expanded="true" signature="623:639" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -852,17 +933,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor11/symfony/symfony/src/Symfony/Component/Translation/Loader/ArrayLoader.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-473">
-          <caret line="20" column="6" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor11/symfony/symfony/src/Symfony/Component/Translation/Loader/ArrayLoader.php" />
     <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Translation/Loader/JsonFileLoader.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-187">
+        <state relative-caret-position="1000">
           <caret line="50" column="0" lean-forward="false" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
           <folding>
             <element signature="e#7#236#0#PHP" expanded="true" />
@@ -873,7 +947,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Translation/MessageCatalogue.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3740">
+        <state relative-caret-position="4280">
           <caret line="221" column="31" lean-forward="false" selection-start-line="221" selection-start-column="20" selection-end-line="221" selection-end-column="31" />
           <folding />
         </state>
@@ -883,14 +957,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="481">
           <caret line="3109" column="0" lean-forward="false" selection-start-line="3109" selection-start-column="0" selection-end-line="3109" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ApiBundle/Controller/DepositStationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="46" column="42" lean-forward="false" selection-start-line="46" selection-start-column="42" selection-end-line="46" selection-end-column="42" />
+        <state relative-caret-position="760">
+          <caret line="45" column="42" lean-forward="false" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
           <folding />
         </state>
       </provider>

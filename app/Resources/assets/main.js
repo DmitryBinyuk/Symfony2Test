@@ -123,7 +123,7 @@ const store = new Vuex.Store({
       context.commit('filterPatients')
     },
     loadPatients (context) {
-      axios.get('http://symfony.dev/patients')
+      axios.get('http://symfony.dev/get')
         .then(function (response) {
           console.log(response.data.data.collections.patient)
           context.commit('setPatients', response.data.data.collections.patient)

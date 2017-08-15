@@ -3,10 +3,10 @@
         {{ patient.label }}
 
         <span class="caret"></span>
-        <!--<div v-show="openedPatient === patient.id">-->
-            <!--<p><strong>Tel.:</strong> {{ patient.details.tel }}</p>-->
-            <!--<p><strong>E-mail:</strong> {{ patient.details.email }}</p>-->
-        <!--</div>-->
+        <div v-show="openedPatient === patient.id">
+            <p><strong>Tel.:</strong> {{ patient.details.tel }}</p>
+            <p><strong>E-mail:</strong> {{ patient.details.email }}</p>
+        </div>
     </a>
 </template>
 

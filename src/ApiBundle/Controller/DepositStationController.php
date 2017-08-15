@@ -19,33 +19,31 @@ class DepositStationController extends Controller
      */
     public function getAction()
     {
-	//prepare data for response from JSON file
+	    //prepare data for response from JSON file
         $jsonService = $this->get('parse.json.service');
-        $json = $jsonService->getJson();
+        $jsonObject = $jsonService->getJson();
 	
-	$jsonObject = json_decode($json);
+        $labels = [];
+        $groups = [];
+        $statuses = [];
+        $details = [];
 	
-	$labels = [];
-	$groups = [];
-	$statuses = [];
-	$details = [];
-	
-	foreach($jsonObject->collections->patient as $key=>$value){
-	    if(!in_array($value->label, $labels)){
-		$labels[] = $value->label;
-	    }
-	    
-	    if(!in_array($value->group, $groups)){
-		$groups[] = $value->group;
-	    }
-	    
-	    if(!in_array($value->status, $statuses)){
-		$statuses[] = $value->status;
-	    }
-	    
-	    if(!in_array($value->details, $details)){
-		$details['email'] = $value->details->email;
-		$details['tel'] = $value->details->tel;
+	    foreach($jsonObject->collections->patient as $key=>$value){
+            if(!in_array($value->label, $labels)){
+            $labels[] = $value->label;
+            }
+
+            if(!in_array($value->group, $groups)){
+            $groups[] = $value->group;
+            }
+
+            if(!in_array($value->status, $statuses)){
+            $statuses[] = $value->status;
+            }
+
+            if(!in_array($value->details, $details)){
+            $details['email'] = $value->details->email;
+            $details['tel'] = $value->details->tel;
 	    }
 	}
 	

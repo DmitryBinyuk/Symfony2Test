@@ -8,11 +8,9 @@ class ParseJsonSourceService extends JsonFileLoader
 {
     public function getJson()
     {
-        $Loader = new JsonFileLoader();
-
-	$file = $Loader->load(__DIR__.'/data.json', 'ua');
+        $file = file_get_contents(__DIR__.'/data.json', 'uk');
 	
-	return json_encode($file);
+	    return json_decode($file);
     }
 }
 

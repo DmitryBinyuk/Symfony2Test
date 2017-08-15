@@ -123,16 +123,15 @@ const store = new Vuex.Store({
       context.commit('filterPatients')
     },
     loadPatients (context) {
-      axios.get('http://symfony.dev/get')
+      axios.get('/get')
         .then(function (response) {
-          console.log(response.data.data.collections.patient)
           context.commit('setPatients', response.data.data.collections.patient)
+          context.commit('setGroups')
+          context.commit('freshPatients')
         })
         .catch(function (error) {
           console.log(error)
         })
-      context.commit('freshPatients')
-      context.commit('setGroups')
     },
     searchPatients (context, searchQuery) {
       context.commit('setSearchQuery', searchQuery)

@@ -34,7 +34,6 @@
 
     mounted () {
       this.$store.dispatch('loadPatients')
-      this.$store.commit('freshPatients')
     }
   }
 </script>

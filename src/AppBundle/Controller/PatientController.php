@@ -84,6 +84,7 @@ class PatientController extends Controller
 	    'data' => $result,
 	)));
 	$response->headers->set('Content-Type', 'application/json');
+	$response->headers->set('Access-Control-Allow-Origin', 'http://localhost:8080');
 
 	return $response;
     }
@@ -110,6 +111,7 @@ class PatientController extends Controller
         )));
 
         $response->headers->set('Content-Type', 'application/json');
+        $response->headers->set('Access-Control-Allow-Origin', 'http://localhost:8080');
 
         return $response;
     }

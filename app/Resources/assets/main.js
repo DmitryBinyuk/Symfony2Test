@@ -4,74 +4,107 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Vuex from 'vuex'
-import axios from 'axios'
+// import axios from 'axios'
+import VueVirtualScroller from 'vue-virtual-scroller'
+import _ from 'lodash'
 
 Vue.config.productionTip = false
 
 Vue.use(Vuex)
+Vue.use(VueVirtualScroller)
 
 const store = new Vuex.Store({
   state: {
-    patientsByAlphabet: [],
-    patientsByGroup: [],
-    patientsBySearch: [],
-    patientsByArchive: [],
+    patients: [
+      {id: 1, label: 'Vier Testfall', group: 'Mendffe, Manuela', status: 0, details: {email: 'test@test.de', tel: '1234'}}, {id: 2, label: 'Beata Brysz', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 3, label: 'Claus Nolte', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 4, label: 'Andrea Kuckuck', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 5, label: 'Frank Weigel', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 6, label: 'Marie Meier', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 7, label: 'Heike Otto', group: 'Ittri, Mulham', status: 0, details: {email: 'test@test.de', tel: '1234'}}, {id: 8, label: 'Vier Testfall', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 9, label: 'Beata Brysz', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 10, label: 'Claus Nolte', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 11, label: 'Andrea Kuckuck', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 12, label: 'Frank Weigel', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 13, label: 'Marie Meier', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 14, label: 'Heike Otto', group: 'Ittri, Mulham', status: 0, details: {email: 'test@test.de', tel: '1234'}}, {id: 15, label: 'Vier Testfall', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 16, label: 'Beata Brysz', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 17, label: 'Claus Nolte', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 18, label: 'Andrea Kuckuck', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 19, label: 'Frank Weigel', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 20, label: 'Marie Meier', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 21, label: 'Heike Otto', group: 'Ittri, Mulham', status: 0, details: {email: 'test@test.de', tel: '1234'}}, {id: 1, label: 'Vier Testfall', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 2, label: 'Beata Brysz', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 3, label: 'Claus Nolte', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 4, label: 'Andrea Kuckuck', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 5, label: 'Frank Weigel', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 6, label: 'Marie Meier', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 7, label: 'Heike Otto', group: 'Ittri, Mulham', status: 0, details: {email: 'test@test.de', tel: '1234'}}, {id: 8, label: 'Vier Testfall', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 9, label: 'Beata Brysz', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 10, label: 'Claus Nolte', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 11, label: 'Andrea Kuckuck', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 12, label: 'Frank Weigel', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 13, label: 'Marie Meier', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 14, label: 'Heike Otto', group: 'Ittri, Mulham', status: 0, details: {email: 'test@test.de', tel: '1234'}}, {id: 15, label: 'Vier Testfall', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 16, label: 'Beata Brysz', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 17, label: 'Claus Nolte', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 18, label: 'Andrea Kuckuck', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 19, label: 'Frank Weigel', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 20, label: 'Marie Meier', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 21, label: 'Heike Otto', group: 'Ittri, Mulham', status: 0, details: {email: 'test@test.de', tel: '1234'}}, {id: 1, label: 'Vier Testfall', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 2, label: 'Beata Brysz', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 3, label: 'Claus Nolte', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 4, label: 'Andrea Kuckuck', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 5, label: 'Frank Weigel', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 6, label: 'Marie Meier', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 7, label: 'Heike Otto', group: 'Ittri, Mulham', status: 0, details: {email: 'test@test.de', tel: '1234'}}, {id: 8, label: 'Vier Testfall', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 9, label: 'Beata Brysz', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 10, label: 'Claus Nolte', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 11, label: 'Andrea Kuckuck', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 12, label: 'Frank Weigel', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 13, label: 'Marie Meier', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 14, label: 'Heike Otto', group: 'Ittri, Mulham', status: 0, details: {email: 'test@test.de', tel: '1234'}}, {id: 15, label: 'Vier Testfall', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 16, label: 'Beata Brysz', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 17, label: 'Claus Nolte', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 18, label: 'Andrea Kuckuck', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 19, label: 'Frank Weigel', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 20, label: 'Marie Meier', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 21, label: 'Heike Otto', group: 'Ittri, Mulham', status: 0, details: {email: 'test@test.de', tel: '1234'}}, {id: 1, label: 'Vier Testfall', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 2, label: 'Beata Brysz', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 3, label: 'Claus Nolte', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 4, label: 'Andrea Kuckuck', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 5, label: 'Frank Weigel', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 6, label: 'Marie Meier', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 7, label: 'Heike Otto', group: 'Ittri, Mulham', status: 0, details: {email: 'test@test.de', tel: '1234'}}, {id: 8, label: 'Vier Testfall', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 9, label: 'Beata Brysz', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 10, label: 'Claus Nolte', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 11, label: 'Andrea Kuckuck', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 12, label: 'Frank Weigel', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 13, label: 'Marie Meier', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 14, label: 'Heike Otto', group: 'Ittri, Mulham', status: 0, details: {email: 'test@test.de', tel: '1234'}}, {id: 15, label: 'Vier Testfall', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 16, label: 'Beata Brysz', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 17, label: 'Claus Nolte', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 18, label: 'Andrea Kuckuck', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 19, label: 'Frank Weigel', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 20, label: 'Marie Meier', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 21, label: 'Heike Otto', group: 'Ittri, Mulham', status: 0, details: {email: 'test@test.de', tel: '1234'}}, {id: 1, label: 'Vier Testfall', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 2, label: 'Beata Brysz', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 3, label: 'Claus Nolte', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 4, label: 'Andrea Kuckuck', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 5, label: 'Frank Weigel', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 6, label: 'Marie Meier', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 7, label: 'Heike Otto', group: 'Ittri, Mulham', status: 0, details: {email: 'test@test.de', tel: '1234'}}, {id: 8, label: 'Vier Testfall', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 9, label: 'Beata Brysz', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 10, label: 'Claus Nolte', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 11, label: 'Andrea Kuckuck', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 12, label: 'Frank Weigel', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 13, label: 'Marie Meier', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 14, label: 'Heike Otto', group: 'Ittri, Mulham', status: 0, details: {email: 'test@test.de', tel: '1234'}}, {id: 15, label: 'Vier Testfall', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 16, label: 'Beata Brysz', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 17, label: 'Claus Nolte', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 18, label: 'Andrea Kuckuck', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 19, label: 'Frank Weigel', group: 'Mende, Manuela', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 20, label: 'Marie Meier', group: 'Ittri, Mulham', status: 1, details: {email: 'test@test.de', tel: '1234'}}, {id: 21, label: 'Heike Otto', group: 'Ittri, Mulham', status: 0, details: {email: 'test@test.de', tel: '1234'}}
+    ],
     groups: [],
-    nothingNotFound: false
+    currentList: {
+      id: 'AZ',
+      name: 'sortation',
+      url: 'patient-list',
+      title: 'Patienten-Liste',
+      collection: 'patient',
+      group: false,
+      filter: {status: 1},
+      filterBox: [
+        {type: 'text', value: 'label'}
+      ]
+    },
+    navigation: [
+      {
+        id: 'AZ',
+        name: 'sortation',
+        url: 'patient-list',
+        title: 'Patienten-Liste',
+        collection: 'patient',
+        group: false,
+        filter: {status: 1},
+        filterBox: [
+          {type: 'text', value: 'label'}
+        ]
+      },
+      {
+        id: 'group',
+        name: 'group',
+        url: 'patient-list',
+        title: 'Patienten-Liste',
+        collection: 'patient',
+        group: true
+      },
+      {
+        id: 'archive',
+        name: 'archive',
+        url: 'patient-list-archived',
+        title: 'Liste der archivierten Patienten',
+        collection: 'patient',
+        group: false,
+        filter: {status: 0}
+      }
+    ],
+    filteredPatients: [],
+    currentGroup: null
   },
 
   mutations: {
-    getGroups (state) {
-      axios.get('/groups')
-        .then(function (response) {
-          state.groups = response.data.data
-        })
-        .catch(function (response) {
-          console.log(response)
-        })
+    setList (state, list) {
+      state.currentList = _.find(state.navigation, {'name': list})
     },
-    getPatientsByGroup (state, group) {
-      axios.get('/patients?group=' + group)
-        .then(function (response) {
-          state.patientsByGroup = response.data.data.collections.patient
-          state.nothingNotFound = response.data.data.collections.patient.length === 0
-        })
-        .catch(function (response) {
-          console.log(response)
-        })
+    setCurrentGroup (state, group) {
+      state.currentGroup = group
     },
-    getPatientsBySearch (state, query) {
-      axios.get((query) ? '/patients?name=' + query : '/patients')
-        .then(function (response) {
-          state.patientsBySearch = response.data.data.collections.patient
-          state.nothingNotFound = response.data.data.collections.patient.length === 0
-        })
-        .catch(function (response) {
-          console.log(response)
-        })
+    filterPatients (state) {
+      // Select by filter
+      for (let key in state.currentList.filter) {
+        state.filteredPatients = state.filteredPatients.filter(patient => patient[key] === state.currentList.filter[key])
+      }
+      // Select by group
+      if (state.currentList.group) {
+        state.filteredPatients = state.filteredPatients.filter(patient => patient.group === state.currentGroup)
+      }
     },
-    getPatientsByArchive (state) {
-      axios.get('/patients?status=0')
-        .then(function (response) {
-          state.patientsByArchive = response.data.data.collections.patient
-          state.nothingNotFound = response.data.data.collections.patient.length === 0
-        })
-        .catch(function (response) {
-          console.log(response)
-        })
+    freshPatients (state) {
+      state.filteredPatients = state.patients
     },
-    getPatientsByAlphabet (state) {
-      axios.get('/patients?page=1')
-        .then(function (response) {
-          state.patientsByAlphabet = response.data.data.collections.patient
-          state.nothingNotFound = response.data.data.collections.patient.length === 0
-        })
-        .catch(function (response) {
-          console.log(response)
-        })
+    setGroups (state, groups) {
+      state.groups = groups
+    }
+  },
+
+  actions: {
+    selectList (context, list) {
+      context.commit('setList', list)
+      context.commit('freshPatients')
+      context.commit('filterPatients')
     },
-    resetNotFound (state) {
-      state.nothingNotFound = false
+    selectGroup (context, group) {
+      context.commit('setCurrentGroup', group)
+      context.commit('freshPatients')
+      context.commit('filterPatients')
+    },
+    loadGroups ({commit, state}) {
+      let groups = _.mapValues(_.uniqBy(state.patients, 'group'), 'group')
+      commit('setGroups', groups)
     }
   }
 })

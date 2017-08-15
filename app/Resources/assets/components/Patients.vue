@@ -7,7 +7,7 @@
                 <p><strong>E-mail:</strong> {{ patient.email }}</p>
             </div>
         </a>
-        <div v-show="patients == '' && !nothingNotFound "><img src="loader.svg"></div>
+        <div v-show="patients == '' && !nothingNotFound "><img src="http://symfony.dev/loader.svg"></div>
 
         <p v-show="nothingNotFound">Nothing not found</p>
 

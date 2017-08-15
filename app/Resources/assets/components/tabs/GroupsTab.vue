@@ -5,7 +5,7 @@
                 <h4>Groups</h4>
             </div>
 
-            <div v-show="groups == ''"><img src="loader.svg"></div>
+            <div v-show="groups == ''"><img src="http://symfony.dev/loader.svg"></div>
 
             <div class="panel-body" v-show="showGroupsBlock">
                 <div class="list-group">

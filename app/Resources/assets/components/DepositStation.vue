@@ -1,56 +1,40 @@
 <template>
     <div class="container-fluid">
-        <alphabet-tab v-if="currentPane == 'alphabet'"></alphabet-tab>
-        <groups-tab v-if="currentPane == 'groups'"></groups-tab>
-        <archive-tab v-if="currentPane == 'archive'"></archive-tab>
-        <search-tab v-if="currentPane == 'search'"></search-tab>
-
-        <div class="col-sm-2">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <ul class="nav nav-pills nav-stacked">
-                        <li :class="{ 'active' : currentPane == 'alphabet'}"><a @click="openTab('alphabet')"><span class="glyphicon glyphicon-sort-by-alphabet" aria-hidden="true"></span></a></li>
-                        <li :class="{ 'active' : currentPane == 'groups'}"><a @click="openTab('groups')"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span></a></li>
-                        <li :class="{ 'active' : currentPane == 'archive'}"><a @click="openTab('archive')"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a></li>
-                        <li :class="{ 'active' : currentPane == 'search'}"><a @click="openTab('search')"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <deposit-station-list
+                v-for="list in navigation"
+                :list="list"
+                :key="list.id"
+                v-if="list.name == currentList.name"
+        ></deposit-station-list>
+        <deposit-station-navigation></deposit-station-navigation>
     </div>
 </template>
 
 <script>
-  import AlphabetTab from './tabs/AlphabetTab'
-  import GroupsTab from './tabs/GroupsTab'
-  import ArchiveTab from './tabs/ArchiveTab'
-  import SearchTab from './tabs/SearchTab'
+  import DepositStationNavigation from './DepositStationNavigation'
+  import DepositStationList from './DepositStationList'
+  import { mapState } from 'vuex'
 
   export default {
-    name: 'depositStation',
 
     components: {
-      AlphabetTab,
-      GroupsTab,
-      ArchiveTab,
-      SearchTab
+      DepositStationNavigation,
+      DepositStationList
     },
 
-    data () {
-      return {
-        currentPane: 'alphabet'
-      }
+    computed: {
+      localComputed () {
+        //
+      },
+      ...mapState([
+        'navigation',
+        'currentList'
+      ])
     },
 
     mounted () {
-      this.currentPane = localStorage.getItem('currentTab') || 'alphabet'
-    },
-
-    methods: {
-      openTab (tabName) {
-        this.currentPane = tabName
-        localStorage.setItem('currentTab', tabName)
-      }
+      this.$store.dispatch('loadGroups')
+      this.$store.commit('freshPatients')
     }
   }
 </script>

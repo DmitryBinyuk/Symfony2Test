@@ -6,9 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\Translation\Loader\JsonFileLoader;
-use Symfony\Component\Config\Loader\FileLoader;
 use ApiBundle\Services\ParseJsonSourceService;
-use Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
 class DepositStationController extends Controller

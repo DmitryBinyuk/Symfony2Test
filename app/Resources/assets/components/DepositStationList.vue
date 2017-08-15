@@ -36,10 +36,6 @@
                         <deposit-station-item :patient="props.item"></deposit-station-item>
                     </template>
                 </virtual-scroller>
-
-                <a class="list-group-item more">
-                    <strong>More</strong>
-                </a>
             </div>
 
         </div>

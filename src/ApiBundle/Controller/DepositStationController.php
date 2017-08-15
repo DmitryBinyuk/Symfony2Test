@@ -47,7 +47,7 @@ class DepositStationController extends Controller
 	
         $responseArray = [];
 
-        $responseArray['navigation'] = json_decode(json_encode($jsonObject->navigation), true);
+        $responseArray['navigation'] = $jsonObject->navigation;
 
         //create sequence of 20 000 elements woth random values from json file
         for($i=1; $i<=20000; $i++){

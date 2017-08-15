@@ -64,6 +64,7 @@ class DepositStationController extends Controller
 	}
 
 	$response = new JsonResponse(['data' => $responseArray]);
+	$response->headers->set('Access-Control-Allow-Origin', 'http://localhost:8080');
 	
 	return $response;
     }
